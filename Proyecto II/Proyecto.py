@@ -9,7 +9,16 @@ def menu () :
     print ("\t4. Factorial de un número entero")
     print ("\t5. Otro")
     print ("\t0: salir")
-    opcion = int (input ('Seleccione una opción: '))
+
+    while True:
+        try:
+            opcion = int (input ('Seleccione una opción: '))
+            if (opcion > 5 or opcion < 0):      
+                print ('La opción no existe, selecciona una opción válida.')
+            else:
+                break
+        except ValueError:
+            print ('Carácter no válido para seleccionar una opción, inténtalo de nuevo.')
     return  opcion
 
 hola = 'Hola'
